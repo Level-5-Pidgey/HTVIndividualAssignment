@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -9,7 +10,8 @@ namespace HTVIndividualAssignment
 
     static class Program
     {
-        static string dbFilePath = @"C:\\Users\Carl\source\repos\HTVIndividualAssignment\HTVIndividualAssignment\Database\HTVDatabase.mdf";
+        static string dbFilePath = @"|DataDirectory|\Database\HTVDatabase.mdf"; //Change this to a relative path at the end!!
+       
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
