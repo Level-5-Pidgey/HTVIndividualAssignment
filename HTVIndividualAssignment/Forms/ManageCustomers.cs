@@ -133,11 +133,11 @@ namespace HTVIndividualAssignment
             {
                 result = false;
             }
-            if (this.FirstNameText.Text.Trim() == "" || !Regex.IsMatch(this.AddressText.Text.Trim(), @"^[#.a-zA-Z\s,-]+$")) //Real names should not have numerical values!
+            if (this.FirstNameText.Text.Trim() == "" || !Regex.IsMatch(this.FirstNameText.Text.Trim(), @"^[#.a-zA-Z\s,-]+$")) //Real names should not have numerical values!
             {
                 result = false;
             }
-            if (this.LastNameText.Text.Trim() == "" || !Regex.IsMatch(this.AddressText.Text.Trim(), @"^[#.a-zA-Z\s,-]+$")) //Real names should not have numerical values!
+            if (this.LastNameText.Text.Trim() == "" || !Regex.IsMatch(this.LastNameText.Text.Trim(), @"^[#.a-zA-Z\s,-]+$")) //Real names should not have numerical values!
             {
                 result = false;
             }
