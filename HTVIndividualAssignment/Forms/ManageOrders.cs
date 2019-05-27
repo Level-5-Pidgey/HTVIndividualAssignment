@@ -197,23 +197,6 @@ namespace HTVIndividualAssignment
             Update_Database_Window();
         }
 
-        //Safely override closing of window
-        //From post: https://stackoverflow.com/a/1669341
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-            //If the user isn't trying to close this form in a shutdown manner, open up the main menu form again
-            //Create Menu window if the user logs in successfully
-            //From: https://stackoverflow.com/a/13459878
-            this.Hide();
-            MainMenu mainMenuForm = new MainMenu(dbFilePath, loggedInEmployee);
-            mainMenuForm.ShowDialog();
-            mainMenuForm.Show();
-        }
-
         private void ManageOrders_Load(object sender, EventArgs e)
         {
             this.orderTableAdapter.Fill(this.hTVDatabaseDataSet_Orders.Order);
