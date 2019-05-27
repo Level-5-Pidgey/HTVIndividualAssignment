@@ -17,15 +17,15 @@ namespace HTVIndividualAssignment
     public partial class ManageEmployees : Form
     {
         private string dbFilePath;
-        private decimal employeeID;
+        private Employee loggedInEmployee;
         private SqlConnection databaseConn;
         private HashSet<decimal> IDList;
 
-        public ManageEmployees(string aDBFilePath, decimal aEmployeeID)
+        public ManageEmployees(string aDBFilePath, Employee aEmployee)
         {
             InitializeComponent();
             dbFilePath = aDBFilePath;
-            employeeID = aEmployeeID;
+            loggedInEmployee = aEmployee;
 
             //Establish connection to database
             databaseConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + dbFilePath + ";Integrated Security=True");
@@ -264,7 +264,7 @@ namespace HTVIndividualAssignment
             //Create Menu window if the user logs in successfully
             //From: https://stackoverflow.com/a/13459878
             this.Hide();
-            MainMenu mainMenuForm = new MainMenu(dbFilePath, employeeID);
+            MainMenu mainMenuForm = new MainMenu(dbFilePath, loggedInEmployee);
             mainMenuForm.Closed += (s, args) => this.Close();
             mainMenuForm.Show();
         }

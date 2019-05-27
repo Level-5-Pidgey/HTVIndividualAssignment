@@ -17,14 +17,14 @@ namespace HTVIndividualAssignment
     public partial class ManageOrders : Form
     {
         private string dbFilePath;
-        private decimal employeeID;
+        private Employee loggedInEmployee;
         private SqlConnection databaseConn;
         private HashSet<decimal> IDList;
 
-        public ManageOrders(string aDBFilePath, decimal aEmployeeID)
+        public ManageOrders(string aDBFilePath, Employee aEmployee)
         {
             InitializeComponent();
-            employeeID = aEmployeeID;
+            loggedInEmployee = aEmployee;
             dbFilePath = aDBFilePath;
 
             //Establish connection to database
@@ -209,8 +209,8 @@ namespace HTVIndividualAssignment
             //Create Menu window if the user logs in successfully
             //From: https://stackoverflow.com/a/13459878
             this.Hide();
-            MainMenu mainMenuForm = new MainMenu(dbFilePath, employeeID);
-            mainMenuForm.Closed += (s, args) => this.Close();
+            MainMenu mainMenuForm = new MainMenu(dbFilePath, loggedInEmployee);
+            mainMenuForm.ShowDialog();
             mainMenuForm.Show();
         }
 

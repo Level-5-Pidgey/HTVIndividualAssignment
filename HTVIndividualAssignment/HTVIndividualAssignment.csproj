@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="AddOn.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Forms\ManageCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,12 @@
     <Compile Include="Forms\ManageEmployees.Designer.cs">
       <DependentUpon>ManageEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageVehicles.Designer.cs">
+      <DependentUpon>ManageVehicles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +129,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HTVDatabaseDataSet_CustomerInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\HTVDatabaseDataSet_Inventory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HTVDatabaseDataSet_Inventory.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageOrders.resx">
       <DependentUpon>ManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageVehicles.resx">
+      <DependentUpon>ManageVehicles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
@@ -185,6 +200,17 @@
     </None>
     <None Include="Database\HTVDatabaseDataSet_CustomerInfo.xss">
       <DependentUpon>HTVDatabaseDataSet_CustomerInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Database\HTVDatabaseDataSet_Inventory.xsc">
+      <DependentUpon>HTVDatabaseDataSet_Inventory.xsd</DependentUpon>
+    </None>
+    <None Include="Database\HTVDatabaseDataSet_Inventory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HTVDatabaseDataSet_Inventory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\HTVDatabaseDataSet_Inventory.xss">
+      <DependentUpon>HTVDatabaseDataSet_Inventory.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

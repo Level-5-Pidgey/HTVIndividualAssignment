@@ -17,7 +17,7 @@ namespace HTVIndividualAssignment
     public partial class NewOrder : Form
     {
         private string dbFilePath;
-        private decimal employeeID;
+        private Employee loggedInEmployee;
         private SqlConnection databaseConn;
 
         //Items required to display form information:
@@ -34,12 +34,12 @@ namespace HTVIndividualAssignment
         private AddOn[] currentlySelectedAddOns = new AddOn[3];
         private decimal totalCost = 0;
 
-        public NewOrder(string aDBFilePath, decimal aEmployeeID)
+        public NewOrder(string aDBFilePath, Employee aEmployee)
         {
             InitializeComponent();
 
             dbFilePath = aDBFilePath;
-            employeeID = aEmployeeID;
+            loggedInEmployee = aEmployee;
 
             //Establish connection to database
             databaseConn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + dbFilePath + ";Integrated Security=True");
@@ -375,7 +375,7 @@ namespace HTVIndividualAssignment
         {
             if (Check_Value_Entry()) //Ensure that appropriate/not empty values are being submitted to the database.
             {
-                string query = "INSERT INTO [Order] (OrderID, CustomerID, EmployeeID, VehicleID, AddOn1, AddOn2, AddOn3, TotalCost) VALUES (" + OrderIDTextBox.Text + ", " + currentlySelectedCustomer.ID + ", " + "0" /*Need to add employee value here. */ + ", " + currentlySelectedVehicle.ID + ", ";
+                string query = "INSERT INTO [Order] (OrderID, CustomerID, EmployeeID, VehicleID, AddOn1, AddOn2, AddOn3, TotalCost) VALUES (" + OrderIDTextBox.Text + ", " + currentlySelectedCustomer.ID + ", " + loggedInEmployee.ID + ", " + currentlySelectedVehicle.ID + ", ";
                 
                 //Adding Add-ons
                 #region AddOnQueryAdd

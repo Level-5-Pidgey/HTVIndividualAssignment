@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainMenuBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.ManageVehiclesButton = new System.Windows.Forms.Button();
             this.ManageEmployeesButton = new System.Windows.Forms.Button();
             this.OrderManagementGroup = new System.Windows.Forms.GroupBox();
             this.ManageOrdersButton = new System.Windows.Forms.Button();
             this.CreateNewOrderButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddOnsTT = new System.Windows.Forms.ToolTip(this.components);
             this.MainMenuBox.SuspendLayout();
             this.OrderManagementGroup.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +45,8 @@
             // MainMenuBox
             // 
             this.MainMenuBox.Controls.Add(this.button1);
+            this.MainMenuBox.Controls.Add(this.button2);
+            this.MainMenuBox.Controls.Add(this.ManageVehiclesButton);
             this.MainMenuBox.Controls.Add(this.ManageEmployeesButton);
             this.MainMenuBox.Controls.Add(this.OrderManagementGroup);
             this.MainMenuBox.Location = new System.Drawing.Point(13, 13);
@@ -50,12 +56,45 @@
             this.MainMenuBox.TabStop = false;
             this.MainMenuBox.Text = "Dashboard Access";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(49, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Manage Customers";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ManageCustomers_Button);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.No;
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(49, 203);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 23);
+            this.button2.TabIndex = 5;
+            this.button2.TabStop = false;
+            this.button2.Text = "Manage Add-Ons";
+            this.AddOnsTT.SetToolTip(this.button2, "This feature is not yet implemented. Sorry!");
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // ManageVehiclesButton
+            // 
+            this.ManageVehiclesButton.Location = new System.Drawing.Point(49, 174);
+            this.ManageVehiclesButton.Name = "ManageVehiclesButton";
+            this.ManageVehiclesButton.Size = new System.Drawing.Size(129, 23);
+            this.ManageVehiclesButton.TabIndex = 4;
+            this.ManageVehiclesButton.Text = "Manage Vehicles";
+            this.ManageVehiclesButton.UseVisualStyleBackColor = true;
+            this.ManageVehiclesButton.Click += new System.EventHandler(this.ManageVehicles_Button);
+            // 
             // ManageEmployeesButton
             // 
-            this.ManageEmployeesButton.Location = new System.Drawing.Point(49, 107);
+            this.ManageEmployeesButton.Location = new System.Drawing.Point(49, 145);
             this.ManageEmployeesButton.Name = "ManageEmployeesButton";
             this.ManageEmployeesButton.Size = new System.Drawing.Size(129, 23);
-            this.ManageEmployeesButton.TabIndex = 2;
+            this.ManageEmployeesButton.TabIndex = 3;
             this.ManageEmployeesButton.Text = "Manage Employees";
             this.ManageEmployeesButton.UseVisualStyleBackColor = true;
             this.ManageEmployeesButton.Click += new System.EventHandler(this.ManageEmployees_Button);
@@ -76,7 +115,7 @@
             this.ManageOrdersButton.Location = new System.Drawing.Point(43, 48);
             this.ManageOrdersButton.Name = "ManageOrdersButton";
             this.ManageOrdersButton.Size = new System.Drawing.Size(129, 23);
-            this.ManageOrdersButton.TabIndex = 0;
+            this.ManageOrdersButton.TabIndex = 1;
             this.ManageOrdersButton.Text = "Manage Existing Orders";
             this.ManageOrdersButton.UseVisualStyleBackColor = true;
             this.ManageOrdersButton.Click += new System.EventHandler(this.ManageOrders_Button);
@@ -91,15 +130,9 @@
             this.CreateNewOrderButton.UseVisualStyleBackColor = true;
             this.CreateNewOrderButton.Click += new System.EventHandler(this.CreateOrder_Button);
             // 
-            // button1
+            // AddOnsTT
             // 
-            this.button1.Location = new System.Drawing.Point(49, 136);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Manage Customers";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ManageCustomers_Button);
+            this.AddOnsTT.ToolTipTitle = "Add Ons Tool Tip";
             // 
             // MainMenu
             // 
@@ -112,6 +145,7 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HTV Staff Dashboard";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.MainMenuBox.ResumeLayout(false);
             this.OrderManagementGroup.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -126,5 +160,8 @@
         private System.Windows.Forms.Button ManageOrdersButton;
         private System.Windows.Forms.Button CreateNewOrderButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ManageVehiclesButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip AddOnsTT;
     }
 }

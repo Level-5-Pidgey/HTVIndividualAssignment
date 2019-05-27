@@ -219,8 +219,7 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -232,7 +231,6 @@
             this.dataGridView1.DataSource = this.employeeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(493, 399);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -243,7 +241,6 @@
             this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
             this.employeeIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
             this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            this.employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.employeeIDDataGridViewTextBoxColumn.Width = 89;
             // 
             // firstNameDataGridViewTextBoxColumn
@@ -252,7 +249,6 @@
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.firstNameDataGridViewTextBoxColumn.Width = 79;
             // 
             // lastNameDataGridViewTextBoxColumn
@@ -261,7 +257,6 @@
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastNameDataGridViewTextBoxColumn.Width = 80;
             // 
             // employeeTypeDataGridViewTextBoxColumn
@@ -270,7 +265,6 @@
             this.employeeTypeDataGridViewTextBoxColumn.DataPropertyName = "EmployeeType";
             this.employeeTypeDataGridViewTextBoxColumn.HeaderText = "EmployeeType";
             this.employeeTypeDataGridViewTextBoxColumn.Name = "employeeTypeDataGridViewTextBoxColumn";
-            this.employeeTypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.employeeTypeDataGridViewTextBoxColumn.Width = 102;
             // 
             // contactPhoneDataGridViewTextBoxColumn
@@ -279,7 +273,6 @@
             this.contactPhoneDataGridViewTextBoxColumn.DataPropertyName = "ContactPhone";
             this.contactPhoneDataGridViewTextBoxColumn.HeaderText = "ContactPhone";
             this.contactPhoneDataGridViewTextBoxColumn.Name = "contactPhoneDataGridViewTextBoxColumn";
-            this.contactPhoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // employeeBindingSource
             // 

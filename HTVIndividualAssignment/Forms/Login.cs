@@ -14,7 +14,7 @@ namespace HTVIndividualAssignment
     public partial class Login : Form
     {
         private string dbFilePath;
-        private decimal employeeID;
+        private Employee loggedInEmployee;
 
         private SqlConnection databaseConn;
 
@@ -38,14 +38,19 @@ namespace HTVIndividualAssignment
 
             if (DTable.Rows.Count == 1)
             {
-                employeeID = Convert.ToDecimal(DTable.Rows[0][0]);
+                loggedInEmployee = new Employee(Convert.ToDecimal(DTable.Rows[0][0]), DTable.Rows[0][1].ToString(), DTable.Rows[0][2].ToString(), Convert.ToInt32(DTable.Rows[0][3]));
+
+                //Now we've logged in, we need to clear the log-in info again
+                DTable.Clear(); //Also clear login info now to maintain security
+                this.LoginName.Text = "";
+                this.PasswordBox.Text = "";
 
                 //Create Menu window if the user logs in successfully
                 //From: https://stackoverflow.com/a/13459878
                 this.Hide();
-                MainMenu mainMenuForm = new MainMenu(dbFilePath, employeeID);
-                mainMenuForm.Closed += (s, args) => this.Close();
-                mainMenuForm.Show();
+                MainMenu mainMenuForm = new MainMenu(dbFilePath, loggedInEmployee);
+                mainMenuForm.ShowDialog();
+                this.Show();
             }
             else
             {
@@ -74,11 +79,14 @@ namespace HTVIndividualAssignment
             Close();
         }
 
-        //From https://stackoverflow.com/a/14997273
-        //Credit to IMMORTAL -- asks for confirmation before closing
-        private void FormClose(FormClosingEventArgs e)
+        //Safely override closing of window
+        //From post: https://stackoverflow.com/a/1669341
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
             if (PreClosingConfirmation() == DialogResult.Yes)
             {
                 Dispose(true);
@@ -92,7 +100,7 @@ namespace HTVIndividualAssignment
 
         private DialogResult PreClosingConfirmation()
         {
-            DialogResult res = MessageBox.Show(" Do you want to quit?          ", "Quit...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("Do you want to quit?", "Quit...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return res;
         }
     }
