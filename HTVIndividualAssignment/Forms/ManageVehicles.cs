@@ -228,7 +228,7 @@ namespace HTVIndividualAssignment
             }
             else
             {
-                string query = "UPDATE Inventory SET SerialNumber = '" + this.SerialNumberText.Text.Trim() + "', Model = '" + this.ModelText.Text.Trim() + "', Name = '" + this.NameText.Text.Trim() + "', Year = " + this.YearText.Text.Trim() + ", Manufacturer = '" + this.ManufacturerText.Text.Trim() + "', BaseCost = " + this.ModelText.Text.Trim() + ", Available = ";
+                string query = "UPDATE Inventory SET SerialNumber = '" + this.SerialNumberText.Text.Trim() + "', Model = '" + this.ModelText.Text.Trim() + "', Name = '" + this.NameText.Text.Trim() + "', Year = " + this.YearText.Text.Trim() + ", Manufacturer = '" + this.ManufacturerText.Text.Trim() + "', BaseCost = " + this.BaseCostText.Text.Trim() + ", Available = ";
                 if (AvailableBox.Checked)
                 {
                     query += "1";
@@ -237,7 +237,7 @@ namespace HTVIndividualAssignment
                 {
                     query += "0";
                 }
-                query += " WHERE EmployeeID = " + TableIndexBox.Value + ";";
+                query += " WHERE VehicleID = " + TableIndexBox.Value + ";";
                 SqlCommand sqlCommand = new SqlCommand(query, databaseConn);
                 SqlDataReader DataReader;
 
