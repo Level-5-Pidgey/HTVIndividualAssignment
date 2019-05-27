@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.MainMenuBox = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ManageAddOnsButton = new System.Windows.Forms.Button();
             this.ManageVehiclesButton = new System.Windows.Forms.Button();
             this.ManageEmployeesButton = new System.Windows.Forms.Button();
             this.OrderManagementGroup = new System.Windows.Forms.GroupBox();
@@ -45,7 +45,7 @@
             // MainMenuBox
             // 
             this.MainMenuBox.Controls.Add(this.button1);
-            this.MainMenuBox.Controls.Add(this.button2);
+            this.MainMenuBox.Controls.Add(this.ManageAddOnsButton);
             this.MainMenuBox.Controls.Add(this.ManageVehiclesButton);
             this.MainMenuBox.Controls.Add(this.ManageEmployeesButton);
             this.MainMenuBox.Controls.Add(this.OrderManagementGroup);
@@ -66,18 +66,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ManageCustomers_Button);
             // 
-            // button2
+            // ManageAddOnsButton
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.No;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(49, 203);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
-            this.button2.TabIndex = 5;
-            this.button2.TabStop = false;
-            this.button2.Text = "Manage Add-Ons";
-            this.AddOnsTT.SetToolTip(this.button2, "This feature is not yet implemented. Sorry!");
-            this.button2.UseVisualStyleBackColor = true;
+            this.ManageAddOnsButton.Cursor = System.Windows.Forms.Cursors.No;
+            this.ManageAddOnsButton.Location = new System.Drawing.Point(49, 203);
+            this.ManageAddOnsButton.Name = "ManageAddOnsButton";
+            this.ManageAddOnsButton.Size = new System.Drawing.Size(129, 23);
+            this.ManageAddOnsButton.TabIndex = 5;
+            this.ManageAddOnsButton.TabStop = false;
+            this.ManageAddOnsButton.Text = "Manage Add-Ons";
+            this.AddOnsTT.SetToolTip(this.ManageAddOnsButton, "This feature is not yet been properly implemented. Sorry!");
+            this.ManageAddOnsButton.UseVisualStyleBackColor = true;
             // 
             // ManageVehiclesButton
             // 
@@ -143,6 +142,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainMenu";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HTV Staff Dashboard";
             this.Load += new System.EventHandler(this.MainMenu_Load);
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Button CreateNewOrderButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ManageVehiclesButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ManageAddOnsButton;
         private System.Windows.Forms.ToolTip AddOnsTT;
     }
 }

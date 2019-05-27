@@ -72,6 +72,8 @@ namespace HTVIndividualAssignment
             {
                 VehicleBox.Items.Add(v.ToString());
             }
+
+            EmployeeTextBox.Text = loggedInEmployee.ID.ToString(); //All orders created by the logged in employee are logged
         }
 
         private void Load_Customer_List()

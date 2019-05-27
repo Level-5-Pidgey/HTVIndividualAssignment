@@ -85,6 +85,7 @@ namespace HTVIndividualAssignment
                 //So we need to disable all other buttons
                 ManageEmployeesButton.Enabled = false;
                 ManageVehiclesButton.Enabled = false;
+                ManageAddOnsButton.Enabled = false;
             }
         }
     }
